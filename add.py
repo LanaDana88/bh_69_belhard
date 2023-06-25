@@ -9,7 +9,7 @@
 # last_name = 'Kama'
 # age = 28
 # leave = 'Borisov'
-# print(first_name, last_name, age, leave, sep=' - ', end=' И все!!!')
+# print(first_name, last_name, age, leave, sep='_', end=' И все!!!')
 
 # first_name = input('Введите Ваше имя:')
 # last_name = input ('Введите Вашу фамилию:')
@@ -35,16 +35,16 @@
 age = 15
 name ='Katya'
 is_human = True
-# text = f"Hello {name}, are you {age}?"
+#text = f"Hello {name}, are you {age}?"
 # text = 'Hello your name is human'
-# text1 = 'Hello ' + name + ' your age ' + str(age) + ' is_human ' + str(is_human)
-# text2 = 'Hello %s your age %d is human %d' % (name, age, is_human)
-# text3 = f"Hello { name * 3 } your age {age} is human {is_human}"
-# text4 = 'Hello {} your age {} is human {}'. format(name, age, is_human)
-# print(text1)
-# print(text2)
-# print(text3)
-# print(text4)
+text1 = 'Hello ' + name + ' your age ' + str(age) + ' is_human ' + str(is_human)
+text2 = 'Hello %s your age %d is human %d' % (name, age, is_human)
+text3 = f"Hello { name * 3 } your age {age} is human {is_human}"
+text4 = 'Hello {} your age {} is human {}'. format(name, age, is_human)
+print(text1)
+print(text2)
+print(text3)
+print(text4)
 
 # print(f'{age:_>10}')
 
