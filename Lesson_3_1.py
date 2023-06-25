@@ -7,4 +7,4 @@ print(*words, sep='_')
 
 text = input('enter the sentence:')
 words = text.split()
-print('_', join([words]))
+print('_'.join([words]))
