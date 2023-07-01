@@ -278,8 +278,72 @@ obj = [2, 3, 5, 8, 9, 5]
 # numbers = [int(input('enter number:')) for i in range(3)]
 # print(numbers)
 
-data = {f'{i}': i ** 2 for i in range(1, 100, 2)}
-print(data)
+# data = {f'{i}': i ** 2 for i in range(1, 100, 2)}
+# print(data)
+#
+# data = (i for i in range(10))
+# print(data)
+#
+# data = [i for i in range(10)]
+# print(data)
+
+from collections import *
+
+
+def nametuplle(param):
+    pass
+
+# user = namedtuple('user', ('name', 'age', 'email'))
+# vasya = user(name='vasy', age=28, email='vas@gmai.com')
+# print(vasya)
+# print(vasya.age)
+
+# numbers = ('hello', 'python', 'python', 'world')
+# c = Counter(numbers)
+# print(c)
+
+# c1 = Counter('hello python')
+# c2 = Counter('hello world')
+# # print(c1.most_common())
+# # print(c1.most_common(n=4))
+# # print(c2)
+# # print(list(c2.elements()))
+# # print(c1.total())
+# print(c1)
+# print(c2)
+# c1.subtract(c2)
+# print(c1)
+# print(c1 - c2)
+
+# data = defaultdict(list)
+# print(data['name'])
+# print(data)
+# data['languges'].append('ru')
+#
+# data = defaultdict(int)
+# data['languges'] += 1
+# print(data)
+
+# data = {
+#     'a': 1,
+#     'b': 2,
+#     'c': 3,
+#     'd': 4
+# }
+# data2 = {
+#     'b': 5,
+#     'e': 6
+# }
+# chain = ChainMap(data, data2)
+# print(chain['b'])
+# print(chain['e'])
+# chain['e'] = 8
+# print(chain)
+# chain.parents['g'] = 9
+# print(chain)
+
+
+
 
 
 
