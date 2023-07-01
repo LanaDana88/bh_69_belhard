@@ -342,10 +342,30 @@ def nametuplle(param):
 # chain.parents['g'] = 9
 # print(chain)
 
-nambers = [ ]
-n = int(input('введите число n:'))
-list_numbers = [numbers ** 2 for numbers in range(1, n ^ 2)]
-print(list_numbers)
+# nambers = [ ]
+# n = int(input('введите число n:'))
+# list_numbers = [numbers ** 2 for numbers in range(1, n ^ 2)]
+# print(list_numbers)
+
+# text = input('введите тескст:')
+# counts = {}
+# for char in text:
+#     char = char.lower()
+#     counts[char] = counts.get(char, 0) + 1
+# for letter, count in counts.items():
+#     print(f"Буква '{letter}' встречается {count} раз")
+
+n = int(input('введите число n: '))
+slovar = {i: i for i in range(n+1)}
+inner_slovar = {
+    'name': input('enter name:'),
+    'email': input('enter email:')
+}
+slovar['inner_slovar'] = inner_slovar
+print(slovar)
+
+
+
 
 
 
