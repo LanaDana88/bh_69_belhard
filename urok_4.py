@@ -342,8 +342,10 @@ def nametuplle(param):
 # chain.parents['g'] = 9
 # print(chain)
 
-
-
+nambers = [ ]
+n = int(input('введите число n:'))
+list_numbers = [numbers ** 2 for numbers in range(1, n ^ 2)]
+print(list_numbers)
 
 
 
