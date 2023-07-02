@@ -88,6 +88,62 @@
 # else:
 #     print('числа отрицательные')
 
+#ЦИКЛЫ
 
+# fruktik = ('apple', 'banana', 'chery', 'orange')
+# for frukt in fruktik:
+#     print(frukt)
+#
+# world = input('enter world: ')
+# glasnii_letter = 0
+# for letter in world:
+#     if letter.lower() in 'eyuoia':
+#         glasnii_letter += 1
+# print('kolichestvo glassnih bukv', glasnii_letter)
+
+# sum = 0
+# num = 1
+# while num <= 100:
+#     sum += num
+#     num += 1
+# print(sum)
+#
+# start = 20
+# end = 30
+# num = start
+# while num <= 30:
+#     if num % 7 == 0:
+#         break
+#     num += 1
+# print(num)
+#
+# secret_number = 42
+# guess = 0
+# while guess != secret_number:
+#     guess = int(input('enter secret number: '))
+#     if guess == secret_number:
+#         break
+#
+# print('Супер, молодец, ты угодал', secret_number)
+
+# for i in range(1,10):
+#     print(i)
+#
+# sum = 0
+# num = 1
+# for num in range(1,101):
+#     sum += num
+# print(sum)
+
+# for i in range(2, 20, 2):
+#     print(i)
+
+sum = 0
+for i in range(1, 51, 2):
+    sum += i
+print(sum)
+
+for i in range(1,11):
+    print(7, 'x', i, '=', 7 * i)
 
 
