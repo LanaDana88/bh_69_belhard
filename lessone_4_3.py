@@ -6,11 +6,15 @@
 
 
 
+# n = int(input('введите число n: '))
+# slovar = {i: i for i in range(n+1)}
+# inner_slovar = {
+#     'name': input('enter name: '),
+#     'email': input('enter email: ')
+# }
+# slovar['inner_slovar'] = inner_slovar
+# print(slovar)
+
 n = int(input('введите число n: '))
-slovar = {i: i for i in range(n+1)}
-inner_slovar = {
-    'name': input('enter name: '),
-    'email': input('enter email: ')
-}
-slovar['inner_slovar'] = inner_slovar
+slovar = {i: {'name': input('enter name: '), 'email': input('enter email: ')} for i in range(1, n+1)}
 print(slovar)

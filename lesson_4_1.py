@@ -8,5 +8,5 @@ print(list_number)
 
 nambers = [ ]
 n = int(input('введите число n:'))
-list_numbers = [numbers ** 2 for numbers in range(1, n ^ 2)]
+list_numbers = [numbers ** 2 for numbers in range(1, n+1)]
 print(list_numbers) # новое решение

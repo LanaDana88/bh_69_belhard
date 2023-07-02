@@ -5,14 +5,25 @@
 #
 #         print(my_list.items())
 
-text = input('введите тескст:')
-count = len(text.split())
-print(count)
+# text = input('введите тескст:')
+# count = len(text.split())
+# print(count)
+
+# text = input('enter text:')
+# counts = {}
+# for char in text:
+#     char = char.lower()
+#     counts[char] = counts.get(char, 0) + 1
+# for letter, count in counts.items():
+#   print(f"буква '{letter}' встречается {count}
+#
+from collections import Counter
+#
+# text = input('enter text:')
+# counts = Counter({i: i for i in text})
+# print(counts)
 
 text = input('enter text:')
-counts = {}
-for char in text:
-    char = char.lower()
-    counts[char] = counts.get(char, 0) + 1
-for letter, count in counts.items():
-    print(f"буква '{letter}' встречается {count} раз'")
+counts = Counter(text)
+print(counts)
+
