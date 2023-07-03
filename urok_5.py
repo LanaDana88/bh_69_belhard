@@ -442,10 +442,17 @@
 # itogo = 'не четное' if num % 2 != 0 else 'ничего'
 # print(itogo)
 
-words = ['nello', 'python', 'world']
-for word in words:
-    for letter in word:
-        print(letter)
+# words = ['nello', 'python', 'world']
+# for word in words:
+#     for letter in word:
+#         print(letter)
 
+# Пользователь вводит число, необходимо выбрать максимальную цифру
 
-
+number = input('enter number: ')
+max_num = 0
+for num in number:
+    if int(num) > max_num:
+        max_num = int(num)
+print(max_num)
+# print(max(number))
