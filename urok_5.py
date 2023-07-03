@@ -138,12 +138,141 @@
 # for i in range(2, 20, 2):
 #     print(i)
 
-sum = 0
-for i in range(1, 51, 2):
-    sum += i
-print(sum)
+# sum = 0
+# for i in range(1, 51, 2):
+#     sum += i
+# print(sum)
+#
+# for i in range(1,11):
+#     print(7, 'x', i, '=', 7 * i)
 
-for i in range(1,11):
-    print(7, 'x', i, '=', 7 * i)
+# for i in range(1,10):
+#     print(i, end= ' ')
+
+# for i in range(0, 20, 2):
+#     print(i, end=" ")
+
+# text = "Hello"
+# for letter in text:
+#     print(letter, end= "__")
+
+# text = 'python'
+# gl_let = 0
+# for letter in text:
+#     if letter in 'eyuoai':
+#         gl_let += 1
+# print(gl_let)
+
+# for i in range(1, 51):
+#     if i % 3 == 0:
+#         print(i, end=' ')
+# n = int(input('enter number: '))
+# for i in range(0, n+1):
+#     if i % 3 == 0:
+#         print(i, end=" ")
+
+# sum = 0
+# for i in range(1, 101, 2):
+#      sum += i
+# print(sum)
+
+# sum = 0
+# for i in range(1, 101, 2):
+#     sum += i
+# print(sum)
+
+# for i in range(100, 0, -1):
+#     print(i)
+
+# num = int(input('enter number: '))
+# prostoe_chislo = True
+# if num <= 1:
+#     prostoe_chislo = False
+# else:
+#     for i in range(2, num + 1):
+#         if num % i == 0:
+#             prostoe_chislo = False
+#             break
+# print(prostoe_chislo)
+
+
+
+# num = int(input('Введите число: '))
+# reversed_num = 0
+#
+# while num > 0:
+#     digit = num % 10
+#     reversed_num = reversed_num * 10 + digit
+#     num = num // 10
+#
+# print(reversed_num)
+
+#Zapis_zanyatiua
+
+# a = 5
+#
+# if a > 0:
+#     print('a is positive')
+
+# a = -2
+#
+# if a > 0:
+#     print('a is positive')
+# elif a < 0:
+#     print('a is negative')
+# else:
+#     print('a is null')
+
+
+a = 45
+if a % 2:
+    is_even = "No"
+else:
+    is_even = "Yes"
+print(is_even)
+
+a = 42
+is_even = 'No' if a % 2 else 'Yes'
+print(is_even)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
