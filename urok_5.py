@@ -369,10 +369,83 @@
 # else:
 #     print('FINISH!')
 
+# a = 5
+# while a > 0:
+#     a -= 1
 
+# собираем comprechantion
+#заполнить cписок четных чисел в кавдрате от 0 до 100
+#
+# # number = []
+# # for i in range(0, 100, 2):
+# #     number.append(i ** 2)
+# #     print(number)
+#
+# number = [i ** 2 for i in range(0, 101, 2)]
+# print(number)
 
+# # кратные 6
+# number = []
+# for i in range(0, 100, 2):
+#     if i % 6 == 0:
+#         number.append(i ** 2)
+# print(number)
+#
+# number = [i ** 2 for i in range(0, 101, 2) if i % 6 == 0]
+# print(number)
 
+# for _ in range(8):
+#     print('lena')
 
+# пользователь вводит сумму депозита и % ставкупо вкладу капитализации
+# расчитать через сколько лет вклад удвоится
+
+# dep = int(input('enter your depozit: '))
+# st_vk = int(input('enter stavku po depozitu: '))
+# year = 0
+# procent = st_vk / 100 + 1
+# itog = dep * 2
+# while dep < itog:
+#     year += 1
+#     dep *= procent
+# print(year)
+
+# усть монеты номиналом  1 5 10 25
+# необходимо gсчитать мини кол-во монет для данной суммы
+# kopeiki = int(input('enter kopi: '))
+# kopi = (25, 10, 5, 1)
+# kopi_count = 0
+# for kop in kopi:
+#     kopi_count += kopeiki // kop
+#     kopeiki -= (kopeiki // kop) * kop
+# print(kopi_count)
+#
+# coins = (25, 10, 5, 1)
+# amount = int(input("enter amuont: "))
+# coins_count = 0
+# for coin in coins:
+#     coins_count += amount // coin
+#     amount -= (amount // coin) * coin
+# print(coins_count)
+
+# Дан список чисел нужно отфильтровать по четным числам
+# оставить только четные
+#
+# numbers = (1, 2,  3,  4,  5,  6,  7,  8,  9,  10)
+# new = []
+# for number in numbers:
+#     if number % 2 == 0:
+#         new.append(number)
+# print(new)
+
+# num = int(input('enter numbers:'))
+# itogo = 'не четное' if num % 2 != 0 else 'ничего'
+# print(itogo)
+
+words = ['nello', 'python', 'world']
+for word in words:
+    for letter in word:
+        print(letter)
 
 
 
