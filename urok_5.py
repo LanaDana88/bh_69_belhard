@@ -224,50 +224,150 @@
 #     print('a is null')
 
 
-a = 45
-if a % 2:
-    is_even = "No"
-else:
-    is_even = "Yes"
-print(is_even)
+# a = 45
+# if a % 2:
+#     is_even = "No"
+# else:
+#     is_even = "Yes"
+# print(is_even)
+#
+# a = 42
+# is_even = 'No' if a % 2 else 'Yes'
+# print(is_even)
 
-a = 42
-is_even = 'No' if a % 2 else 'Yes'
-print(is_even)
+# x = True
+# y = False
+# z = False
+# if not x or y:
+#     print(1)
+# elif not x or not y and z:
+#     print(2)
+# elif not x or y or not y and x:
+#     print(3)
+# else:
+#     print(4)
 
+# x = input('enter num:' )
+# x2 = 5
+# print(isinstance(x, int))
+# print(isinstance(x, (int, float)))
+# print(isinstance(x2, int))
 
+# без условный цикл FOR
 
+# for i  in range(1, 10, 2): # 1 3 5 7 9
+#     i **= 2
+#     print(i, end=" ")
 
+# text = 'hello' # для строки, список, кортеж, сета и фрозенсета
+# for i in text:
+#     print(i, end="  ")
 
+# text = 'hello'
+# for i in range(len(text)):
+#     print((text[i]), end=" ")
 
+# text = 'hello'
+# for i in enumerate(text):
+#     print(i)
 
+# l = [
+#     (1, 2, 3),
+#     (4, 5, 6),
+#     (7, 8, 9),
+#     (10, 11, 12)
+# ]
+# for i in l:
+#     print(i)
+#
+# l = [
+#     (1, 2, 3),
+#     (4, 5, 6),
+#     (7, 8, 9),
+#     (10, 11, 12)
+# ]
+# for i, j, k in l:
+#     print(i, j, k)
+#
+# l = [
+#     (1, 2, 3),
+#     (4, 5, 6),
+#     (7, 8, 9),
+#     (10, 11, 12)
+# ]
+# for i, j, k in l:
+#     print(f'{i=}', f'{j=}', f'{k=}')
 
+# data = [
+#     ('Cappuccino', 'Good', 5.50),
+#     ('Latte', 'Bad', 6.20),
+#     ('Mokko', 'Not so bad', 4.50),
+# ]
+# for name, descr, prise in data:
+#     print(name, descr, prise)
+#
+# s = set('hello')
+# for i in s:
+#     print(i)
 
+# data = {
+#     'key1': 'value1',
+#     'key2': "value2",
+#     'key3': 'value3',
+#     'key4': 'value4',
+# }
+# for key in data.keys():
+#     print(key)
+#
+# data = {
+#     'key1': 'value1',
+#     'key2': "value2",
+#     'key3': 'value3',
+#     'key4': 'value4',
+# }
+# for key in data.values():
+#     print(key)
+# data = {
+#     'key1': 'value1',
+#     'key2': "value2",
+#     'key3': 'value3',
+#     'key4': 'value4',
+# }
+# for key in data.items():
+#     print(key)
+#
+# data = {
+#     'key1': 'value1',
+#     'key2': "value2",
+#     'key3': 'value3',
+#     'key4': 'value4',
+# }
+# for key, val in data.items():
+#     print(key, val)
 
+# for i in range(10):
+#     if i % 2:
+#         continue
+#     print(i)
 
+# for i in range(10):
+#     if i == 7:
+#         break
+#     print(i)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# for i in range(10):
+#     if i == 7:
+#         break
+#     print(i)
+# else:
+#     print('FINISH!')
+#
+# for i in range(10):
+#     if i == 10:
+#         break
+#     print(i)
+# else:
+#     print('FINISH!')
 
 
 
