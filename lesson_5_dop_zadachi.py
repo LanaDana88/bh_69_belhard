@@ -94,6 +94,40 @@
 # необходимо уменьшить price на 5%.
 # Остальные словари оставляем без изменений.
 
+# list_slovarei = [
+#     {'category_id': '1', 'name': 'coffe', 'price': '8.25'},
+#     {'category_id': '2', 'name': 'tee', 'price': '5.25'},
+#     {'category_id': '3', 'name': 'jus', 'price': '3.25'},
+#     {'category_id': '4', 'name': 'water', 'price': '1.25'},
+#     {'category_id': '5', 'name': 'coffe arabica', 'price': '18.77'},
+#     {'category_id': '6', 'name': 'milk', 'price': '2.25'},
+#     {'category_id': '7', 'name': 'fresh', 'price': '4.87'},
+#     {'category_id': '2', 'name': 'soda', 'price': '1.77'},
+#     {'category_id': '1', 'name': 'cola', 'price': '3.89'}
+# ]
+# first = list_slovarei[0]
+# category_id = first['category_id']
+# name = first['name']
+# price = first['price']
+# # second = list_slovarei[1]
+# # thed = list_slovarei[2]
+# # name = thed['name']
+# print('ID категории товара: ', category_id, 'Название товара:', name, 'Цена товара: ', price)
+#
+# new_list_slovarei = []
+# for item in list_slovarei:
+#     if item['category_id'] != '1':
+#      new_list_slovarei.append(item)
+# print(new_list_slovarei)
+#
+# for item in list_slovarei:
+#     if item['category_id'] == '2':
+#         item['price'] = str(float(item['price']) * 1.05)
+#         new_list_slovarei.append(item)
+# print(new_list_slovarei)
+
+
+
 #ЗАДАЧА 4
 #Дан список содержащий словари,
 # в каждом словаре может быть
@@ -104,7 +138,28 @@
 # среди словарей у которых есть данный ключ.
 
 
+list_slovarei = [
+    {'category_id': '1', 'name': 'coffe', 'price': '0'},
+    {'category_id': '2', 'name': 'tee', 'price': '5.25'},
+    {'category_id': '3', 'name': 'jus', 'price': '3.25'},
+    {'category_id': '4', 'name': 'water', 'price': '0'},
+    {'category_id': '5', 'name': 'coffe arabica', 'price': '18.77'},
+    {'category_id': '6', 'name': 'milk', 'price': '2.25'},
+    {'category_id': '7', 'name': 'fresh', 'price': '4.87'},
+    {'category_id': '2', 'name': 'soda', 'price': '1.77'},
+    {'category_id': '1', 'name': 'cola', 'price': '3.89'}
+]
 
+new_slovar = []
+sr_prise = 0
+count = 0
+for item in list_slovarei:
+    if item['price'] != '0':
+        sr_prise += float(item['price'])
+        count += 1
+        new_slovar.append(item)
+sr_prise /= count
+print(sr_prise)
 
 
 
