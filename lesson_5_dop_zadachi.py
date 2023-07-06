@@ -59,16 +59,19 @@
 # У пользователя спрашивают число (вводим с клавиатуры)
 # но пользователь может ввестине число, вводит пока не введет число
 
-num = input('enter number:_')
-
-while num.isdijit():
-    num = True
-else:
-    num = False
-    num = input('enter new num: ')
-print('Вы ввели число', num)
+# num = input('enter number:_')
 #
+# while num.isdigit():
+#     num = True
+# else:
+#     num = False
+#     num = input('enter new num: ')
+# print('Вы ввели число', num)
 #
+# num = input('enter number:_')
+# while not num.isdigit():
+#     num = input('enter new num: ')
+# #
 # num = input('enter number:_')
 # - проверяет только текст без символов
 
