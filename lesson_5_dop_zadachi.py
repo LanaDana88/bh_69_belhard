@@ -59,14 +59,14 @@
 # У пользователя спрашивают число (вводим с клавиатуры)
 # но пользователь может ввестине число, вводит пока не введет число
 
-# num = input('enter number:_')
-#
-# while num.isalpha():
-#     num = False
-#     num = input('enter new num: ')
-# else:
-#     num = True
-# print('Вы ввели число', num)
+num = input('enter number:_')
+
+while num.isdijit():
+    num = True
+else:
+    num = False
+    num = input('enter new num: ')
+print('Вы ввели число', num)
 #
 #
 # num = input('enter number:_')
@@ -137,29 +137,29 @@
 # Необходимо рассчитать среднее значение price
 # среди словарей у которых есть данный ключ.
 
-
-list_slovarei = [
-    {'category_id': '1', 'name': 'coffe', 'price': '0'},
-    {'category_id': '2', 'name': 'tee', 'price': '5.25'},
-    {'category_id': '3', 'name': 'jus', 'price': '3.25'},
-    {'category_id': '4', 'name': 'water', 'price': '0'},
-    {'category_id': '5', 'name': 'coffe arabica', 'price': '18.77'},
-    {'category_id': '6', 'name': 'milk', 'price': '2.25'},
-    {'category_id': '7', 'name': 'fresh', 'price': '4.87'},
-    {'category_id': '2', 'name': 'soda', 'price': '1.77'},
-    {'category_id': '1', 'name': 'cola', 'price': '3.89'}
-]
-
-new_slovar = []
-sr_prise = 0
-count = 0
-for item in list_slovarei:
-    if item['price'] != '0':
-        sr_prise += float(item['price'])
-        count += 1
-        new_slovar.append(item)
-sr_prise /= count
-print(sr_prise)
+#
+# list_slovarei = [
+#     {'category_id': '1', 'name': 'coffe', 'price': '0'},
+#     {'category_id': '2', 'name': 'tee', 'price': '5.25'},
+#     {'category_id': '3', 'name': 'jus', 'price': '3.25'},
+#     {'category_id': '4', 'name': 'water', 'price': '0'},
+#     {'category_id': '5', 'name': 'coffe arabica', 'price': '18.77'},
+#     {'category_id': '6', 'name': 'milk', 'price': '2.25'},
+#     {'category_id': '7', 'name': 'fresh', 'price': '4.87'},
+#     {'category_id': '2', 'name': 'soda', 'price': '1.77'},
+#     {'category_id': '1', 'name': 'cola', 'price': '3.89'}
+# ]
+#
+# new_slovar = []
+# sr_prise = 0
+# count = 0
+# for item in list_slovarei:
+#     if item['price'] != '0':
+#         sr_prise += float(item['price'])
+#         count += 1
+#         new_slovar.append(item)
+# sr_prise /= count
+# print(sr_prise)
 
 
 

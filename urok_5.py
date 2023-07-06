@@ -449,10 +449,20 @@
 
 # Пользователь вводит число, необходимо выбрать максимальную цифру
 
-number = input('enter number: ')
-max_num = 0
-for num in number:
-    if int(num) > max_num:
-        max_num = int(num)
-print(max_num)
-# print(max(number))
+# number = input('enter number: ')
+# max_num = 0
+# for num in number:
+#     if int(num) > max_num:
+#         max_num = int(num)
+# print(max_num)
+# # print(max(number))
+
+data = [1, 2, 2, 3, 3, 5, 8, 9, 14, 2, 8, 9, 11]
+counts = {}
+
+for element in data:
+    if element in counts:
+        counts[element] += 1
+    else:
+        counts[element] = 1
+print(counts)
