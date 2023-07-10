@@ -188,20 +188,87 @@
 # от а до b с множетелем
 # 2, 4, 8, 16,  32, 64
 
-def geo_progress(a, b, c):
-    numbers = []
-    while a < b:
-        numbers.append(a)
-        a *= c
-    return numbers
+# def geo_progress(a, b, c):
+#     numbers = []
+#     while a < b:
+#         numbers.append(a)
+#         a *= c
+#     return numbers
+#
+# print(geo_progress(2, 100, 2))
+#
+# # TODO написать функцию average? принимающую неопределенное количество
+# # чисел и возвращающее среднее с точностью до 2
+#
+# def average(*numbers):
+#     return round(sum(numbers) / len(numbers), 2)
 
-print(geo_progress(2, 100, 2))
 
-# TODO написать функцию average? принимающую неопределенное количество
-# чисел и возвращающее среднее с точностью до 2
+# анономная функция lambda
+# multiply = lambda x, y: x * y
+# print(multiply(4, 5))
 
-def average(*numbers):
-    return round(sum(numbers) / len(numbers), 2)
+
+numbers = [2, 3, 4, 5, '2', '4', '6', 8, 9]
+# эта функция формирует список промежуточных значений,
+# делет их строчными, т.е.
+#приводит их к строке  ('2', '3', '4', '5', '2', '4', '6', '8', '9')
+# затем этот промежуточный список сортирует
+numbers.sort(key=lambda x: str(x))
+print(numbers)
+
+# data = [
+#     {'name': 'Vasya', 'age': 45},
+#     {'name': 'Petya', 'age': 23},
+#     {'name': 'Masha', 'age': 18},
+#     {'name': 'Maksim', 'age': 28}
+# ]
+# #по возрасту
+# data.sort(key=lambda user: user.get('age'))
+# print(data)
+# max(data, key=lambda user: user.get('age'))
+# min(data, key=lambda user: user.get('age'))
+# print(max(data, key=lambda user: user.get('age')))
+# print(min(data, key=lambda user: user.get('age')))
+
+
+# numbers = input().split()
+# numbers = [int(numbers) for numbers in numbers]
+# print(numbers)
+#
+# #через map
+# numbers = input().split()
+# numbers = map(lambda x: int(x), numbers)
+# print(numbers)
+#
+# numbers = input().split()
+# numbers = map(lambda x: int(x) ** 2, numbers)
+# print(numbers)
+#
+# numbers = input().split()
+# numbers = list(map(lambda x: int(x) ** 2, numbers))
+# print(numbers)
+
+
+
+numbers = ['1', '2', '3', '4', '5']
+numbers = [int(numbers) ** 2 for numbers in numbers]
+print(numbers)
+
+numbers = ['1', '2', '3', '4', '5']
+numbers = list(map(lambda x: int(x) ** 2, numbers)) # нельзя дописать условие
+print(numbers)
+
+# фильтр
+
+numbers = ['1', '2', '3', '4', '5']
+numbers = [int(numbers) ** 2 for numbers in numbers]
+numbers = [number for number in numbers if number % 2]
+numbers = filter(lambda x: x % 2, numbers)          #итератор
+numbers = list(filter(lambda x: x % 2, numbers))    #лист
+print(numbers)
+
+
 
 
 
