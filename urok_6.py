@@ -214,8 +214,8 @@ numbers = [2, 3, 4, 5, '2', '4', '6', 8, 9]
 # делет их строчными, т.е.
 #приводит их к строке  ('2', '3', '4', '5', '2', '4', '6', '8', '9')
 # затем этот промежуточный список сортирует
-numbers.sort(key=lambda x: str(x))
-print(numbers)
+# numbers.sort(key=lambda x: str(x))
+# print(numbers)
 
 # data = [
 #     {'name': 'Vasya', 'age': 45},
@@ -250,23 +250,252 @@ print(numbers)
 # print(numbers)
 
 
+#
+# numbers = ['1', '2', '3', '4', '5']
+# numbers = [int(numbers) ** 2 for numbers in numbers]
+# print(numbers)
+#
+# numbers = ['1', '2', '3', '4', '5']
+# numbers = list(map(lambda x: int(x) ** 2, numbers)) # нельзя дописать условие
+# print(numbers)
+#
+# # фильтр
+#
+# numbers = ['1', '2', '3', '4', '5']
+# numbers = [int(numbers) ** 2 for numbers in numbers]
+# numbers = [number for number in numbers if number % 2]
+# numbers = filter(lambda x: x % 2, numbers)          #итератор
+# numbers = list(filter(lambda x: x % 2, numbers))    #лист
+# print(numbers)
 
-numbers = ['1', '2', '3', '4', '5']
-numbers = [int(numbers) ** 2 for numbers in numbers]
+#TODO s_vidio_urok_6
+
+def is_palindrome(text):
+    text = text.lower()
+    print(text == text[::-1])
+is_palindrome("lana")
+is_palindrome('ШаЛаш')
+
+#позиционный
+
+def foo(a, b, c):
+    print(a, b, c)
+
+foo(2, 4, 18) #передача по позициям, за искл.явной передачи
+
+def foo(a, b, c=7):
+    print(a, b, c)
+foo(a=3, b=88)
+
+def foo(a, b=156, c=7): # чаще всего пердают явно, растет читабельность кода
+    print(a, b, c)
+print(foo.__defaults__)
+
+foo(3)
+
+# необязательные аргументы, по умолчание значение None
+def foo(a, b=None, c=87):
+    print(a, b, c)
+
+def bar(*args): #args - кортеж
+    print(args)
+bar(4, 5, 8, 9, 'lena')
+
+
+def baz(**kwargs): #kwargs - словарь
+    print(kwargs)
+baz(name = 'lena', city = "Dubai", age = 38)
+
+# обязательные оппозиционные, всегда принимает первыми
+# **kwargs всегда принимает последними
+# все остальные в любом порядке, как необходимо
+def bas(a, b, c=88, *args, d=None, **kwargs):
+    print(a)
+    print(b)
+    print(c)
+    print(args)
+    print(d)
+    print(kwargs)
+
+bas(10, 8, 43, 75, 88, 9, 14, 69, 78, 12)
+
+bas(10, 8, 43, 75, 88, 9, 14, 69, d=78, e=12)
+
+def func(a, b=[]): # не индепотентна
+    b.append(a)
+    print(b)
+func(4)
+func(4)
+
+# решение этой проблемы, чтобы функция была идемпотентной
+def func(a, b=None): # не индепотентна
+    if b is None:
+        b = []
+    b.append(a)
+    print(b)
+func(4)
+func(4)
+
+#если нуждно вернуть рез-т работы
+
+def is_palindrome(text):
+    text = text.lower()
+    return (text == text[::-1])
+
+res = is_palindrome("lana") #=False
+print(res)
+
+def is_palindrome(text):
+    text = text.lower()
+    return (text == text[::-1]), text # рез-т кортеж
+
+res = is_palindrome("lana")
+print(res)
+
+a = 9.99
+a1 = 9.99
+a2 = 3.045
+print((a + a1)*a2)
+
+# TODO написать функцию при помощи 3-х челочисленных аргументов (а, b, c)
+#  и возвращающая список чисел геометрической прогрессии о
+#  т а до B с множетелем с, a=2, d=169, c=2 [2, 4, 8, 16, 64]
+
+def geo_prog(a, b, c):
+    numbers = []
+    while a < b:
+        numbers.append(a)
+        a *= c
+    return numbers
+
+prog = geo_prog(2, 169, 2)
+print(prog)
+
+#TODO написать функцию average, принимающую неопределенное количество
+#  чисел и возвращающая среднее значение с точностью 2
+
+def average(*args):
+    return round(sum(args) / len(args), 2)
+res = average(2, 8, 9, 7, 5, 6, 3, 4, 28, 888)
+print(res)
+
+# анонимные функции lambda
+
+myltiply = lambda x, y: x * y
+print(myltiply(4, 8))
+
+numbers = [4, 8, 9, '2', '99', 18, 45, '99']
+numbers.sort(key=lambda x: str(x))
 print(numbers)
 
-numbers = ['1', '2', '3', '4', '5']
-numbers = list(map(lambda x: int(x) ** 2, numbers)) # нельзя дописать условие
-print(numbers)
+data = [
+    {"name": "Lena", 'age': 45},
+    {"name": "Dima", 'age': 23},
+    {"name": "Katya", 'age': 21},
+    {"name": "Vam", 'age': 18},
+]
+# сортруем по возрастам
 
-# фильтр
+data.sort(key=lambda x: x.get('age'))
+print(data)
 
-numbers = ['1', '2', '3', '4', '5']
-numbers = [int(numbers) ** 2 for numbers in numbers]
-numbers = [number for number in numbers if number % 2]
-numbers = filter(lambda x: x % 2, numbers)          #итератор
-numbers = list(filter(lambda x: x % 2, numbers))    #лист
-print(numbers)
+starshii = max(data, key=lambda x: x.get('age'))
+print(starshii)
+
+# # класс map
+# numbers = input().split()
+# numbers = [int(number) for number in numbers]
+# print(numbers)
+#
+# numbers = input().split()
+# numbers = map(lambda x: int(x), numbers)
+# print(numbers)
+#
+# numbers = input().split()
+# numbers = map(lambda x: int(x) ** 2, numbers)
+# print(numbers)
+#
+# numbers = input().split()
+# numbers = list(map(lambda x: int(x) ** 2, numbers))
+# print(numbers)
+
+# filter
+
+# numbers = ['1', '2', '3', '4', '5']
+# numbers = [int(number) ** 2 for number in numbers]
+# numbers = [number for number in numbers if number % 2]
+# numbers = filter(lambda x: x % 2, numbers)
+# numbers = list(filter(lambda x: x % 2, numbers))
+# print(numbers)
+
+#TODO написать функцию, принимающую спсок чисел и возв. список
+# с аккумулятив суммой
+# пример [1, 2, 3, 4, 5]
+# ответ [1, 3, 6, 18, 15]
+
+def acumilytive(numbers):
+    x = 0
+    res = []
+    for number in numbers:
+        x += number
+        res.append(x)
+    return res
+
+itog = acumilytive([1, 2, 3, 4, 5, 6])
+print(itog)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
