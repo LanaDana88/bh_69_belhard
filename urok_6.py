@@ -444,7 +444,26 @@ def acumilytive(numbers):
 itog = acumilytive([1, 2, 3, 4, 5, 6])
 print(itog)
 
+from functools import reduce
 
+numbers = [1, 2, 3, 4, 5, 6]
+print(reduce(lambda x, y: x * y, numbers))
+
+#TODO написать функцию, is_pangramm принимающую строку и взвр.
+#  True - если строка явл. панграмм
+#  False - если строка не панграмм
+
+from string import ascii_lowercase
+
+def is_pangram(text):
+    text = text.lower()
+    for letter in ascii_lowercase:
+        if letter not in text:
+            return False
+    return True
+
+pam= is_pangram('hello')
+print(pam)
 
 
 
