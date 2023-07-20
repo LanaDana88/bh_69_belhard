@@ -226,3 +226,66 @@ print(user1 + user2)
 print(user1 + 23)
 user1 += 12
 print(user1.age)
+
+
+#OOP
+#Abstrakciya
+#Nasledovanie -
+#Polimarfizm
+
+class User:
+
+    def __init__(self, name: str, email: str) -> None:
+        self.name = name
+        self.email = email
+        self.is_active = True
+
+    def __repr__(self):
+        return f'User name={self.name} email={self.email}'
+
+    def __bool__(self):
+        return self.is_active
+
+# хочу описать класс манеджер? код весь не повторять, нарушаем dry
+#наследуемся
+class Manager(User):
+
+    def foo(self):
+        print('foo')
+
+vasya = Manager("Vasysa", "vas@gmail.com")
+print(vasya)
+vasya.foo()
+
+# множественное наследование от 2-х и более классов
+
+class A:
+    name = 'a'
+
+class B:
+    name = 'B'
+
+
+class C(A, B):
+   pass
+
+print(C.name)
+
+#Polimarfizm переопределение род. метода внутри дочерноего с целью расширения
+
+class Manager(User):
+    def __init__(self, name: str, email: str, salary: int):
+        super().__init__(name, email)
+        self.salary = salary
+
+
+vasya = Manager("Vasysa", "vas@gmail.com")
+print(vasya)
+vasya.foo()
+
+
+
+
+
+
+
