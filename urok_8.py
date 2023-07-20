@@ -160,31 +160,69 @@ class User:
 # возможность итерации по объекту с for реализуетсЯ 2 метода iter и next
     def __iter__(self): # описывает что будет возвращаться, когда передаем в iter
         return self
-    def __next__(self):# описывает что будет возвращаться когда буду обращаться к итератору с помощью функции next- внутри не д.б. никаких циклов
-        self.i += 1
-        try:
-            return self.name
-        except IndexError
-            self.i = 1
-            raise StopIteration
+    # def __next__(self):# описывает что будет возвращаться когда буду обращаться к итератору с помощью функции next- внутри не д.б. никаких циклов
+    #     self.i += 1
+    #     try:
+    #         return self.name
+    #     except IndexError
+    #         self.i = 1
+    #         raise StopIteration
 
 
 
-vasya = User(name='Vasya')
-for i in vasya:
-    print(i)
-print(vasya)
-print(len(vasya)) # dlina
-print(vasya[2]) #обращение по индексу
+# vasya = User(name='Vasya')
+# for i in vasya:
+#     print(i)
+# print(vasya)
+# print(len(vasya)) # dlina
+# print(vasya[2]) #обращение по индексу
 
 # если есть Len_ то объект будет приводиться к bool На основании рез-та длинны
 # длинна пустой строки
 
+class User:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.i = -1
+        self.is_active = True
+    def __repr__(self):
+        return f'User: name={self.name}'
+    def __len__(self):
+        return len(self.name)
+
+    def disable(self):
+        self.is_active = False
+
+    def __getitem__(self, item):
+        return self.name[item]
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.disable()
+# реализовать сложение, нужно 2-а метода add и radd
+    def __add__(self, other): # левое сложение.ю реализуется один метод, а во втором происходит перевызов первого
+        if isinstance(other, int):
+            return self.age + other
+        elif isinstance(other, User):
+            return self.age + other.age
+        else:
+            raise ValueError
+
+    def __radd__(self, other): #правое сложение
+        return self.__add__(other)
+
+    def __iadd__(self, other):
+        if isinstance(other, int):
+            self.age += other
+            return self
 
 
-
-
-
-
-
-
+user1 = User(name='User1', age=12)
+user2 = User(name='User2', age=52)
+print(user1 + user2)
+print(user1 + 23)
+user1 += 12
+print(user1.age)
