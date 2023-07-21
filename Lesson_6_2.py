@@ -1,4 +1,4 @@
-c
+
 def func_code_morze(text):
     code_morze = {
         'A': '.-', 'B': '-...',
@@ -17,8 +17,8 @@ def func_code_morze(text):
     }
     code_text = ''
     for letter in text:
-        if letter.upper in code_morze:
-            text += code_morze[letter.upper()] + ''
-        else: code_text += ' '
+        if letter.upper() in code_morze:
+            code_text += code_morze[letter.upper()] + ' '
+        else: code_text += '   '
     return code_text
 print(func_code_morze('hello'))
