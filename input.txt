@@ -1,18 +1,6 @@
-hello
-
-
-lena
-
-
-Kama
-
-
-Dana
-
-
-Hello Kity?
-
-my day
+2 5 8
+12 18 49
+31 58 59
 
 
 
