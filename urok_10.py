@@ -9,8 +9,8 @@
 
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent # возвращает экземпляр класса, parent отсекает по 1-му родителю
-print(BASE_DIR)
+# BASE_DIR = Path(__file__).resolve().parent # возвращает экземпляр класса, parent отсекает по 1-му родителю
+# print(BASE_DIR)
 
 # file = open(BASE_DIR / 'input.txt') # в идеале заводить баз.дир и делить на относительный путь
 #
@@ -25,19 +25,26 @@ print(BASE_DIR)
 # # print(type(file))
 #
 # # pro chtenie
-# # print(file.read()) #весь файл выгружаем
+# # print(file.read()) #весь файл выгружаем для чтения
 # # print(file.readline()) # итератор чтение по строкам
 # # print(file.readlines()) #весь файл за раз, но в список строк
 #
 # for line in file:
-#     print(file)
+#     print(line)
 #
-# lines = [line.strip() for line in file if line.strip]
+# lines = [line.strip() for line in file] #с пустыми строками
+# print(lines)
+# # #
+# lines = [line.strip() for line in file if line.strip()] #без пустых строк
 # print(lines)
 #
 # file.close()
 
 # открываем так
+
+BASE_DIR = Path(__file__).resolve().parent # возвращает экземпляр класса, parent отсекает по 1-му родителю
+print(BASE_DIR)
+
 # режимы r - чтение, r+ - чтение и запись
 # w - запись, но если файла нет, то он создается и откр на запись,
 # если есть то пересоздается   w+ - запись чтение
@@ -46,10 +53,75 @@ print(BASE_DIR)
 
 with (
     open(BASE_DIR / 'input.txt', 'r', encoding='utf-8') as file,
-    open('output.txt', 'w', encoding='utf-8' ) as file2
+    open('output.txt', 'w', encoding='utf-8') as file2
 ):
     print(file.read())
+
 print(file.closed)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# TODO дан текстовый многострочный файл, в каждой строке написаны числа через пробел
+# необходимо найти сумму чисел в каждой строки и результаты записать в новый файл
+#
+
+# with (
+# #     open(BASE_DIR / 'input.txt', 'r', encoding='utf-8') as input_file,
+# #     open(BASE_DIR / 'output.txt', 'w', encoding='utf-8') as output_file
+# # ):
+# #     output_file.writelines(
+# #             f'{sum(int(number) for number in line.strip().split())}\n'
+# #             for line in input_file if line.strip()
+# #     )
+# #     # result = []
+# #     # for line in input_file:
+# #     #     line = line.strip().split()
+# #     #     line = [int(i) for i in line]
+# #     #     result.append(f'{sum(line)}\n')
+# #     # output_file.writelines(result)
+#
+#
+# # with open('output.txt', 'w', encoding='utf-8') as file:
+# #     line = '*' * 100 + '\n'
+# #     while True:
+# #         file.write(line)
+#
+
+
 
 
 
