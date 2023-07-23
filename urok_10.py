@@ -216,6 +216,62 @@ with open('config.ini', 'r', encoding='utf-8') as file:
     parser.read_file(file)
     print(parser)
 
+# работа с библиотекой pydantic - по валидации, сериализации, десиарилизации
+
+# cтруктура данных описывается с пом. моделей, а модель это класс
+# при этом класс похож на dataclass - класс сугубо для хранения данных
+
+from pydantic import BaseModel
+#from pydantic.v1 import BaseModel
+
+# каждая модель наследуется от базовой модели или от другого
+# дочернего класса или от другой базовой модели
+# модель пользователя
+
+class User(BaseModel): # объявляем атрибуты класса с аннотацией типов, обязательно с аннотацией типов
+    name: str
+    email: str
+    age: int # или age: int | float
+# данные передаваемые будут проверяться на указанный тип данных
+
+vasya = User(
+    name = "Vasya",
+    email = "vas@gmail.com",
+    age = "25"
+)
+print(vasya)
+
+from pydantic import EmailStr
+
+
+class User(BaseModel):
+    name: str
+    email: EmailStr  # проверка на то, что почта - это почта
+    age: int
+
+Lana = User(
+    name = "Lana",
+    email = "Lana@gmail.com",
+    age = "15"
+)
+print(Lana)
+
+# указание необязательного атрибута
+
+from typing import Optional
+class SomeModel(BaseModel)
+    key: sts | None # 1 вариант
+    key2: str = None # 2 вариант
+    key3: Optional[str] # 3 вариант исп. модуль from typing import Optional
+    key4: str = Field(defoult=None)
+    key5: str = Field(...)
+
+
+
+
+
+
+
 
 
 
