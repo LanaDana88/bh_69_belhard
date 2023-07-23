@@ -305,13 +305,13 @@ def is_palindrome(text: str) -> bool:
     return text.lower() == text.lower()[::-1]
 
 print(is_palindrome('jasfgvsdjvb'))
-print(is_palindrome(123456))
+print(is_palindrome("152477"))
 
 
 
 db = ('vasya@gmail.com', 'petya@gmail.com')
 
-class Person(BaseModel):
+class Person(BaseModel): #проверка  на уникальность емайла в базе данных
     email: EmailStr
 
     @field_validator('email')
@@ -324,7 +324,8 @@ class Person(BaseModel):
 user = Person(email='qwer@gmail.com')
 try:
     user2 = Person(email='vasya@gmail.com')
-except ValidationError as e:
+except ValueError as e:
     print(e.errors())
+    print(e.json())
 
 
