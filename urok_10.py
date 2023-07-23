@@ -99,8 +99,54 @@ with (
 # with open('output.txt', 'w', encoding='utf-8') as file:
       #File.wriete('') # почистить файл, удалить все, т.е перезаписали
 
+# работа с типами файлов
+#табличные файлы  - csv
 
+from csv import reader, DictReader, writer, DictWriter
 
+with open('input.csv', 'r', encoding='utf-8') as csv_file:
+   r = reader(csv_file)
+   for line in r:
+       print(line)
+
+with open('input.csv', 'r', encoding='utf-8') as csv_file:
+   r = DictReader(csv_file) # если имена полей не указать, то в кач-ве имен полей значение строки 1
+   for line in r:
+       print(line) # получаем словарь - ключ значение
+
+# with open('input.csv', 'r', encoding='utf-8') as csv_file:
+#    r = DictReader(csv_file, filednames=('name', 'email', 'age'), delimiter=';')
+#    for line in r:
+#        print(line) # для сит. когда, нет первой строки и разделитель ';'
+
+##ДЛЯ ЗАПИСИ
+
+#создаем список строк
+
+line = [
+    ['vasya', 'vasya@gmail.com', 23],
+    ['petua', 'petua@gmail.com', 35]
+]
+# writerows() принимает список списков, строк и записывает
+# каждый список джойнит по разделителю, строчку по \n  и все отправляет в файл
+with open('output.csv', 'w', encoding='utf-8') as csv_file:
+    w = writer(csv_file)
+    w.writerows(line) #принимает список строк и записывает
+
+# есть DictWriter - нужен список словарей
+
+line = [
+    {'name': 'vasya', 'email': 'vasya@gmail.com', 'age': 23},
+    {'name': 'petua', 'email': 'petua@gmail.com', 'age': 35}
+]
+
+with open('output1.csv', 'w', encoding='utf-8') as csv_file:
+    w = DictWriter(csv_file, fieldnames=('name', 'email', 'age')) #filednames - обязателен
+    w.writeheader()     # 3 метода - writerow принимает словарь
+    w.writerows(line)           # writerows принимает список словарей
+                                # writheader записывает ключи в первую строчку,
+                                # как заголовки, если только создаем, то сначала
+# writheader, а потом 2-а других метода
 
 
 
