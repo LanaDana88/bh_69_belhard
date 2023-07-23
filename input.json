@@ -1,0 +1,12 @@
+{
+  "name": "Lena",
+  "email": "lana@gmail.com",
+  "age": "37",
+  "city": null,
+  "is_human": true,
+  "language": [
+    "ru",
+    "en"
+  ]
+
+}

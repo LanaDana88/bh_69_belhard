@@ -148,6 +148,68 @@ with open('output1.csv', 'w', encoding='utf-8') as csv_file:
                                 # как заголовки, если только создаем, то сначала
 # writheader, а потом 2-а других метода
 
+# 2-ой ТИП ФАЙЛОВ ЭТО JSON - спец. тип файлов на js написан
+# фигурные скобки { }, ковычки только " ",
+# ключи - только строки, значения - строки и числа, булеан с маленькой буквы  - boll - true ili false,
+# null, вложенный словарь, список,
+# после последней пары ключ - значение не ставят запятую - нарушене ситнтаксиса
+
+from json import load, loads, dump, dumps
+
+# у json 4-ре основных функции: load, loads, dump, dumps
+# load - при работе с json в виде файла
+# loads - при работе с json в виде строки
+# dump - при работе с json в виде файла
+# dumps - при работе с json в виде строки
+
+with open('input.json', 'r', encoding='utf-8') as file:
+    # data = load(file)
+    # print(data) # получаем полноценный словарь
+
+    data = loads(file.read()) # читаем строку
+    print(data)
+
+    print(file.read()) # просто прочитается файл json
+
+# ПРО ЗАПИСЬ : 2  способа
+# dump - записываем в файл
+# dumps - записываем в строку
+
+# Серелизация - превращение объекта в поток байт (улсловно записываем в файл)
+#
+# Десерилизация - процесс считывая из json файла в словарь (представление потока байт в объект)
+#
+
+data = {
+    'name': 'Lena',
+    'city': 'Dubai',
+    'regim': 'сон'
+}
+
+data1 = {
+    'name': 'Lena',
+    'city': 'Dubai',
+    'regim': 'сон'
+}
+with open('output.json', 'w', encoding='utf-8') as file:
+    dump(data, file) # запишет в одну строку, для форматирвание исп. атрибут  indent
+    dump(data, file, indent=2)
+    dump(data, file, indent=2, ensure_ascii=False)
+
+with open('output1.json', 'w', encoding='utf-8') as file:
+    text = dumps(data1, indent=2, ensure_ascii=False)
+print(text) # это и будет json file в виде строки
+
+# json не поддерживает объекты даты,
+# они передаются в виде строки согласно какому-то  формату - iso
+# или
+# они передаются виде timestemp (кол-во секунд с 01.01.1970)- число либо целое либо дробное
+
+# русские буквы - юникод добавляем enshure_aschi=False
+# dumps - файл не принимается, возвращается, т.е. его можно куда-то записать
+
+
+
 
 
 
