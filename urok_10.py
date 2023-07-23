@@ -208,6 +208,38 @@ print(text) # это и будет json file в виде строки
 # русские буквы - юникод добавляем enshure_aschi=False
 # dumps - файл не принимается, возвращается, т.е. его можно куда-то записать
 
+from configparser import ConfigParser
+
+
+with open('config.ini', 'r', encoding='utf-8') as file:
+    parser = ConfigParser()
+    parser.read_file(file)
+    print(parser)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
