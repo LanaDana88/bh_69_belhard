@@ -241,7 +241,10 @@ vasya = User(
 )
 print(vasya)
 
-from pydantic import EmailStr
+from pydantic import EmailStr, field_validator, model_validator
+
+from typing import Optional, Literal, List
+
 
 
 class User(BaseModel):
@@ -259,46 +262,69 @@ print(Lana)
 # указание необязательного атрибута
 
 from typing import Optional
-class SomeModel(BaseModel)
-    key: sts | None # 1 вариант
-    key2: str = None # 2 вариант
-    key3: Optional[str] # 3 вариант исп. модуль from typing import Optional
-    key4: str = Field(defoult=None)
-    key5: str = Field(...)
+# class SomeModel(BaseModel):
+#     key: str | None # 1 вариант
+#     key2: str = None # 2 вариант
+#     key3: Optional[str] # 3 вариант исп. модуль from typing import Optional
+#     key4: str = Field(defoult=None)
+#     key5: str = Field(...)
+
+# class Product(BaseModel):
+#     name: str
+#     price: Decimal = field(max_dagits=8, decimal_places=2)
+#
+# class Category(BaseModel):
+#     name: str
+#     products: List[Product]
+#     parent: Optional["Category"]
+
+
+class Shema(BaseModel):
+    key1: str
+    key2: str
+    key3: Literal['value1', 'value2']
+
+    @field_validator('key1')
+    def key1_validator(cls, value: str):
+        return value
+
+    @model_validator(mode='after')
+    def valdator(cls, values: dict):
+        return values
+
+from pydantic import validate_call
+
+# нужна для (декоратор) для валидации аргументов функции
+
+# def is_palindrome(text: str) -> bool:
+#     return text.lower() == text.lower()[::-1]
+
+# можно повесить декоратор и ему не нужно ничего передавать
+@validate_call()
+def is_palindrome(text: str) -> bool:
+    return text.lower() == text.lower()[::-1]
+
+print(is_palindrome('jasfgvsdjvb'))
+print(is_palindrome(123456))
 
 
 
+db = ('vasya@gmail.com', 'petya@gmail.com')
+
+class Person(BaseModel):
+    email: EmailStr
+
+    @field_validator('email')
+    def email_validator(cls, email: str):
+        if email in db:
+            raise ValueError('email is not unique')
+        return email
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+user = Person(email='qwer@gmail.com')
+try:
+    user2 = Person(email='vasya@gmail.com')
+except ValidationError as e:
+    print(e.errors())
 
 
