@@ -74,10 +74,20 @@ class ConfigParser:
             raise ValueError
         self.data[section] = {}
 
+    def del_section(self, section: str):
+        if section in self.data:
+            del self.data[section]
 
+    def del_paramm(self, section: str, param: str):
+        if param in self.data:
+            del self.data[{"param"}]
+        else:
+            raise ValueError
 
-
-
+    def dumps(self):
+        for key, value in dict.items():
+            stroka += f"{key}:{value}"
+        return stroka
 
 
 
