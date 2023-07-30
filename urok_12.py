@@ -77,14 +77,24 @@ from psycopg2.extras import NamedTupleCursor
 # ''', products)
 #
 # conn.commit()
+#
+# cur.execute('''
+#     insert into category (name) values (?);
+# ''', ('Tea', ))
+# conn.commit()
 
 cur.execute('''
-    insert into category (name) values (?);
-''', ('Tea', ))
-conn.commit()
+    select t.name, p.name,  p.price 
+    from category t
+    left join product p on t.id = p.category_id
+''')
 
+print(cur.fetchall())
 
+cur.execute('''
+    select t.name, p.name,  p.price 
+    from category t
+    right join product p on t.id = p.category_id
+''')
 
-
-
-
+print(cur.fetchall())
