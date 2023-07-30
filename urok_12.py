@@ -27,8 +27,11 @@ cur.execute('''
 
 conn.commit()
 
+cur.execute('''
+    create  index if not exists category_id_index on product (category_id);
+''')
 
-
+conn.commit()
 
 
 
