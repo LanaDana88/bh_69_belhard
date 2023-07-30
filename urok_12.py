@@ -64,19 +64,25 @@ from psycopg2 import connect
 from psycopg2.extras import NamedTupleCursor
 
 
-products = [
-    ('Cappuccino', 5.5, 1),
-    ('Latte', 6.5, 1),
-    ('Mokko', 4.5, 1),
-    ('Americano', 3.55, 1),
-    ('Shokko', 4.75, 1),
-]
+# products = [
+#     ('Cappuccino', 5.5, 1),
+#     ('Latte', 6.5, 1),
+#     ('Mokko', 4.5, 1),
+#     ('Americano', 3.55, 1),
+#     ('Shokko', 4.75, 1),
+# ]
+#
+# cur.executemany('''
+#     INSERT INTO product (name, price, category_id) VALUES (?, ?, ?);
+# ''', products)
+#
+# conn.commit()
 
-cur.executemany('''
-    INSERT INTO product (name, price, category_id) VALUES (?, ?, ?);
-''', products)
-
+cur.execute('''
+    insert into category (name) values (?);
+''', ('Tea', ))
 conn.commit()
+
 
 
 
