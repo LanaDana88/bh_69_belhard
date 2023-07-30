@@ -19,7 +19,6 @@ cur.execute('''
         descr varchar (4096), 
         price decimal (8, 2) not null check (price > 0), 
         is_published boolean default (true), 
-        date_created timestamp default (now()), 
         category_id integer not null, 
         foreign key (category_id) references category(id) on delete cascade
     )
@@ -43,7 +42,7 @@ conn.commit()
 #
 # ''',  ("Coffe", ))
 # conn.commit()
-
+#
 # cur.execute('''
 #     select * from category where id >= 1 ;
 # ''')
@@ -55,10 +54,30 @@ conn.commit()
 # ''', ('Кофе', ))
 # conn.commit()
 
-cur.execute('''
-    DELETE from category where name like '%a' ;
-''')
+# cur.execute('''
+#     DELETE from category where name like '%a' ;
+# ''')
+# conn.commit()
+#
+
+from psycopg2 import connect
+from psycopg2.extras import NamedTupleCursor
+
+
+products = [
+    ('Cappuccino', 5.5, 1),
+    ('Latte', 6.5, 1),
+    ('Mokko', 4.5, 1),
+    ('Americano', 3.55, 1),
+    ('Shokko', 4.75, 1),
+]
+
+cur.executemany('''
+    INSERT INTO product (name, price, category_id) VALUES (?, ?, ?);
+''', products)
+
 conn.commit()
+
 
 
 
