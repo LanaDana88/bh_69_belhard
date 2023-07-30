@@ -30,8 +30,36 @@ conn.commit()
 cur.execute('''
     create  index if not exists category_id_index on product (category_id);
 ''')
-
+cur.execute('''
+    create  index if not exists is_published_index on product (is_published);
+''')
 conn.commit()
+
+
+# zapolnyem tablicu
+
+# cur.execute('''
+#     insert into category (name) values (?);
+#
+# ''',  ("Coffe", ))
+# conn.commit()
+
+# cur.execute('''
+#     select * from category where id >= 1 ;
+# ''')
+# print(cur.fetchall())
+# conn.commit()
+
+# cur.execute('''
+#     update category set name = ? where id = 1 ;
+# ''', ('Кофе', ))
+# conn.commit()
+
+cur.execute('''
+    DELETE from category where name like '%a' ;
+''')
+conn.commit()
+
 
 
 
