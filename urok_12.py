@@ -3,36 +3,36 @@ from sqlite3 import connect
 conn = connect('db.sqlite3')
 cur = conn.cursor()
 
-cur.execute('''
-    create table if not exists category (
-        id INTEGER primary key autoincrement, 
-        name Varchar (32) not null unique        
-    );
-''')
-conn.commit()
-
-
-cur.execute('''
-    create table if not exists product (
-        id INTEGER primary key autoincrement, 
-        name varchar (128) not null, 
-        descr varchar (4096), 
-        price decimal (8, 2) not null check (price > 0), 
-        is_published boolean default (true), 
-        category_id integer not null, 
-        foreign key (category_id) references category(id) on delete cascade
-    )
-''')
-
-conn.commit()
-
-cur.execute('''
-    create  index if not exists category_id_index on product (category_id);
-''')
-cur.execute('''
-    create  index if not exists is_published_index on product (is_published);
-''')
-conn.commit()
+# cur.execute('''
+#     create table if not exists category (
+#         id INTEGER primary key autoincrement,
+#         name Varchar (32) not null unique
+#     );
+# ''')
+# conn.commit()
+#
+#
+# cur.execute('''
+#     create table if not exists product (
+#         id INTEGER primary key autoincrement,
+#         name varchar (128) not null,
+#         descr varchar (4096),
+#         price decimal (8, 2) not null check (price > 0),
+#         is_published boolean default (true),
+#         category_id integer not null,
+#         foreign key (category_id) references category(id) on delete cascade
+#     )
+# ''')
+#
+# conn.commit()
+#
+# cur.execute('''
+#     create  index if not exists category_id_index on product (category_id);
+# ''')
+# cur.execute('''
+#     create  index if not exists is_published_index on product (is_published);
+# ''')
+# conn.commit()
 
 
 # zapolnyem tablicu
@@ -83,18 +83,25 @@ from psycopg2.extras import NamedTupleCursor
 # ''', ('Tea', ))
 # conn.commit()
 
-cur.execute('''
-    select t.name, p.name,  p.price 
-    from category t
-    left join product p on t.id = p.category_id
-''')
+# cur.execute('''
+#     select t.name, p.name,  p.price
+#     from category t
+#     left join product p on t.id = p.category_id
+# ''')
 
-print(cur.fetchall())
+# print(cur.fetchall())
 
-cur.execute('''
-    select t.name, p.name,  p.price 
-    from category t
-    right join product p on t.id = p.category_id
-''')
 
-print(cur.fetchall())
+
+
+from psycopg2 import connect
+from psycopg2.extras import NamedTupleCursor
+
+import psycopg2
+
+
+with connect('postgresql://postgres:Kama_888_777@127.0.0.1:5432/postgres') as conn:
+    with conn.cursor() as cur:
+        cur.execute('''insert into categories(name) values(%s);''', ('Latte',))
+        conn.commit()
+
