@@ -8,3 +8,13 @@ for number in range(len(numbers) // 2):
     numbers[number], numbers[~number] = numbers[~number], numbers[number]
 
 print(numbers)
+
+def func_num(numbers):
+    for number in range(len(numbers) // 2):
+        numbers[number], numbers[~number] = numbers[~number], numbers[number]
+    return numbers
+
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+itog = func_num(numbers)
+print(itog)
