@@ -100,8 +100,9 @@ from psycopg2.extras import NamedTupleCursor
 import psycopg2
 
 
-with connect('postgresql://postgres:Kama_888_777@127.0.0.1:5432/postgres') as conn:
-    with conn.cursor() as cur:
-        cur.execute('''insert into categories(name) values(%s);''', ('Latte',))
-        conn.commit()
+# with connect('postgresql://postgres:Kama_888_777@127.0.0.1:5432/postgres') as conn:
+#     with conn.cursor() as cur:
+#         cur.execute('''insert into categories(name) values(%s);''', ('Latte',))
+#         conn.commit()
+
 
