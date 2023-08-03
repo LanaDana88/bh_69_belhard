@@ -29,8 +29,9 @@ from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
 
 
+
 class Settings(BaseModel):
-    engine = create_engine('postgresql://kama:888_kama@127.0.0.1:5432/lana_dana')
+    engine = create_engine(url='postgresql://kama:888_kama@127.0.0.1:5432/lana_dana')
     session = sessionmaker(bind=engine)
 
 
